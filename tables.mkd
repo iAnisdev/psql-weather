@@ -34,3 +34,7 @@ INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 29 , 40 , '2023-
 INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 27 , 38 , '2023-06-03');
 INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 31 , 27 , '2023-06-04');
 INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 32 , 37 , '2023-06-05');
+SELECT * FROM city;
+SELECT name , zip FROM city;
+SELECT * FROM temperature ORDER BY high;
+SELECT date , name , country, zip, low , high  FROM temperature INNER JOIN city ON temperature.city_id = city.id;

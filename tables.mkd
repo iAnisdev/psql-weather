@@ -15,5 +15,8 @@ CREATE TABLE temperature (
 	city_id INT,
 	low int NOT NULL,
 	high int NOT NULL,
-	date DATE NOT NULL
+	date DATE NOT NULL,
+	CONSTRAINT FK_city
+		FOREIGN KEY(city_id)
+		REFERENCES city(id)
 )

@@ -5,7 +5,7 @@ CREATE TABLE city (
 	id SERIAL UNIQUE PRIMARY KEY,
 	name VARCHAR(30) NOT NULL UNIQUE,
 	country VARCHAR(30)  NOT NULL,
-	zip SMALLINT  NOT NULL UNIQUE,
+	zip INT  NOT NULL UNIQUE,
 	isCapital boolean DEFAULT False NOT NULL,
 	createdAT TIMESTAMP DEFAULT current_timestamp
 );
@@ -38,3 +38,8 @@ SELECT * FROM city;
 SELECT name , zip FROM city;
 SELECT * FROM temperature ORDER BY high;
 SELECT date , name , country, zip, low , high  FROM temperature INNER JOIN city ON temperature.city_id = city.id;
+INSERT INTO city(name, country, zip, isCapital) VALUES('Krabi' , 'TH', 81000, false);
+SELECT * FROM city;
+SELECT date , name , country, zip, low , high  FROM temperature LEFT JOIN city ON temperature.city_id = city.id;
+INSERT INTO city(name, country, zip, isCapital) VALUES('Pattaya' , 'TH', 20150, false);
+SELECT date , name , country, zip, low , high  FROM temperature RIGHT JOIN city ON temperature.city_id = city.id;

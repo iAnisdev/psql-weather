@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS temperature;
+DROP TABLE IF EXISTS city;
 
 CREATE TABLE city (
 	id SERIAL UNIQUE PRIMARY KEY,
@@ -21,3 +21,16 @@ CREATE TABLE temperature (
 		FOREIGN KEY(city_id)
 		REFERENCES city(id)
 )
+
+INSERT INTO city(name, country, zip, isCapital) VALUES('bangkok' , 'TH', 10100, true); 
+INSERT INTO city(name, country, zip, isCapital) VALUES('Phuket' , 'TH', 8300, false);
+INSERT INTO temperature(city_id , low , high , date) VALUES(1 , 22 , 38 , '2023-06-01');
+INSERT INTO temperature(city_id , low , high , date) VALUES(1 , 28 , 36 , '2023-06-02');
+INSERT INTO temperature(city_id , low , high , date) VALUES(1 , 24 , 37 , '2023-06-03');
+INSERT INTO temperature(city_id , low , high , date) VALUES(1 , 29 , 35 , '2023-06-04');
+INSERT INTO temperature(city_id , low , high , date) VALUES(1 , 26 , 39 , '2023-06-05');
+INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 28 , 41 , '2023-06-01');
+INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 29 , 40 , '2023-06-02');
+INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 27 , 38 , '2023-06-03');
+INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 31 , 27 , '2023-06-04');
+INSERT INTO temperature(city_id , low , high , date) VALUES(2 , 32 , 37 , '2023-06-05');
